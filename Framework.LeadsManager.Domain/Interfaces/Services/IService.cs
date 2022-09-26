@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using Framework.LeadsManager.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Framework.LeadsManager.Domain.Interfaces
 {
-    public interface IRepository<TEntity> where TEntity : Entity
+    public interface IService<TEntity> where TEntity : Entity
     {
         Task<TEntity> CreateAsync(TEntity obj);
         Task<IEnumerable<TEntity>> CreateAsync(IEnumerable<TEntity> obj);

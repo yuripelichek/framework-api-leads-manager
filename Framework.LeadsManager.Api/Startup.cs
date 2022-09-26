@@ -1,3 +1,5 @@
+using Framework.LeadsManager.Application.Interfaces;
+using Framework.LeadsManager.Application.Services;
 using Framework.LeadsManager.Infrastructure.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -24,14 +26,13 @@ namespace Framework.LeadsManager.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<RepositoryContext>(option => option.UseSqlServer("Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;"));
+            services.AddScoped<ILeadAppService, LeadAppService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Framework.LeadsManager.Api", Version = "v1" });
             });
-
-            services.AddDbContext<RepositoryContext>(option => option.UseSqlServer("Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

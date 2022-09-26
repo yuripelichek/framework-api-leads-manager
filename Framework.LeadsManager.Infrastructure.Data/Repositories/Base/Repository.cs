@@ -19,27 +19,27 @@ namespace Framework.LeadsManager.Infrastructure.Data.Repositories
         private async Task<TEntity> GetById(int id) =>
             await Contexto.Set<TEntity>().FindAsync(id);
 
-        public virtual async Task<TEntity> Create(TEntity obj)
+        public virtual async Task<TEntity> CreateAsync(TEntity obj)
         {
             var entity = (await Contexto.AddAsync(obj)).Entity;
             await Contexto.SaveChangesAsync();
             return entity;
         }
 
-        public virtual async Task<IEnumerable<TEntity>> Create(IEnumerable<TEntity> obj)
+        public virtual async Task<IEnumerable<TEntity>> CreateAsync(IEnumerable<TEntity> obj)
         {
             await Contexto.AddRangeAsync(obj);
             await Contexto.SaveChangesAsync();
             return obj;
         }
 
-        public virtual TEntity Update(TEntity obj)
+        public virtual async Task<TEntity> UpdateAsync(TEntity obj)
         {
             Contexto.Entry(obj).State = EntityState.Modified;
-            return obj;
+            return await Task.FromResult(obj);
         }
 
-        public virtual async Task Remove(int id) =>
+        public virtual async Task RemoveAsync(int id) =>
             Contexto.Remove(await GetById(id));
     }
 }

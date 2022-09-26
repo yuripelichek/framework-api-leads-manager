@@ -10,25 +10,15 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
 {
     public class RepositoryContext : DbContext, IUnitOfWork
     {
-        protected readonly string ConnectionString;
-
         public DbSet<Lead> Lead { get; set; }
-        public DbSet<Category> Category { get; set; }       
-        public DbSet<Client> Client { get; set; }       
-        public DbSet<Job> Job { get; set; }       
-        public DbSet<Address> Address { get; set; }       
-
-        public RepositoryContext(DbContextOptions<RepositoryContext> options) :
-    base(options)
-        { 
-        }
-
-        protected override void OnConfiguring(
-           DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;");
-        }
-
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Client> Client { get; set; }
+        public DbSet<Job> Job { get; set; }
+        public DbSet<Address> Address { get; set; }
+        public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options){}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseSqlServer(@"Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;");
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var type in modelBuilder.Model.GetEntityTypes().Where(e => typeof(Entity).IsAssignableFrom(e.ClrType)))
