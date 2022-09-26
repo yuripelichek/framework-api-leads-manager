@@ -23,6 +23,7 @@ namespace Framework.LeadsManager.Infrastructure.Data.Repositories
         {
             var entity = (await Contexto.AddAsync(obj)).Entity;
             await Contexto.SaveChangesAsync();
+            
             return entity;
         }
 
@@ -38,10 +39,8 @@ namespace Framework.LeadsManager.Infrastructure.Data.Repositories
             Contexto.Entry(obj).State = EntityState.Modified;
             return await Task.FromResult(obj);
         }
-
         public virtual async Task RemoveAsync(int id) =>
             Contexto.Remove(await GetById(id));
-
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await Contexto.Set<TEntity>().ToListAsync();

@@ -6,8 +6,6 @@ namespace Framework.LeadsManager.Domain.Services
 {
     public class AddressService : Service<Address>, IAddressService
     {
-        private readonly IAddressRepository Repository;
-
-        public AddressService(IAddressRepository repository) : base(repository) => Repository = repository;
+        public AddressService(IAddressRepository repository) : base(repository) { }
     }
 }

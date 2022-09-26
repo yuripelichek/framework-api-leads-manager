@@ -31,11 +31,27 @@ namespace Framework.LeadsManager.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<RepositoryContext>(option => option.UseSqlServer("Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;"));
+            services.AddDbContext<RepositoryContext>(option => option
+                .UseLazyLoadingProxies()
+                .UseSqlServer("Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;"));
+            
             services.AddScoped<ILeadAppService, LeadAppService>();
             services.AddScoped<ILeadService, LeadService>();
-            services.AddScoped<ILeadService, LeadService>();
             services.AddScoped<ILeadRepository, LeadRepository>();
+
+            services.AddScoped<IJobService, JobService>();
+            services.AddScoped<IJobRepository, JobRepository>();
+
+            services.AddScoped<IClientAppService, ClientAppService>();
+            services.AddScoped<IClientService, ClientService>();
+            services.AddScoped<IClientRepository, ClientRepository>();
+
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
+
             services.AddAutoMapperSetup();
 
             services.AddControllers();

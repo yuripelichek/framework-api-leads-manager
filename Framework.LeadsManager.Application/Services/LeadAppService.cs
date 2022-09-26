@@ -4,6 +4,7 @@ using Framework.LeadsManager.Application.Interfaces;
 using Framework.LeadsManager.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Framework.LeadsManager.Application.Services
@@ -11,11 +12,15 @@ namespace Framework.LeadsManager.Application.Services
     public class LeadAppService : ILeadAppService
     {
         private readonly ILeadService _leadService;
+        private readonly IJobService _jobService;
+        private readonly IClientService _clientService;
         private readonly IMapper _mapper;
         public LeadAppService(ILeadService leadService,
+            IClientService clientService,
                               IMapper mapper) { 
             _leadService = leadService;
             _mapper = mapper;
+            _clientService = clientService;
         }
         public async Task AcceptLeadAsync(int id)
         {
@@ -25,19 +30,22 @@ namespace Framework.LeadsManager.Application.Services
         {
             throw new NotImplementedException();
         }
-        public Task<IEnumerable<LeadAcceptedDto>> GetAllAcceptedLeadsAsync()
+        public async Task<IEnumerable<LeadAcceptedDto>> GetAllAcceptedLeadsAsync()
         {
-            throw new NotImplementedException();
+            var retornoLead = await _leadService.GetAllAsync();
+            retornoLead = retornoLead.Where(x => x.Approved is true);
+            var retorno = _mapper.Map<IEnumerable<LeadAcceptedDto>>(retornoLead);
+
+            return retorno;
         }
 
-        public async Task<IEnumerable<LeadDto>> GetAllAsync()
+        public async Task<IEnumerable<LeadInvitationDto>> GetAllInvitedLeadsAsync()
         {
-            return _mapper.Map<IEnumerable<LeadDto>>(await _leadService.GetAllAsync());
-        }
+            var retornoLead = await _leadService.GetAllAsync();
+            retornoLead = retornoLead.Where(x => x.Approved is null);
+            var retorno = _mapper.Map<IEnumerable<LeadInvitationDto>>(retornoLead);
 
-        public Task<IEnumerable<LeadInvitationDto>> GetAllInvitedLeadsAsync()
-        {
-            throw new NotImplementedException();
+            return retorno;
         }
     }
 }

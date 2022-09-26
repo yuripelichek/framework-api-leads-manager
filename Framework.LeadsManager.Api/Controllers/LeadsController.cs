@@ -11,6 +11,7 @@ namespace Framework.LeadsManager.Api.Controllers
     public class LeadsController : ControllerBase
     {
         private readonly ILeadAppService _leadAppService;
+        
         public LeadsController(ILeadAppService leadAppService)
         {
             _leadAppService = leadAppService;
@@ -29,14 +30,6 @@ namespace Framework.LeadsManager.Api.Controllers
         public async Task<ActionResult<IEnumerable<LeadAcceptedDto>>> GetAllAcceptedLeads()
         {
             var leads = await _leadAppService.GetAllAcceptedLeadsAsync();
-            return Ok(leads);
-        }
-
-        [HttpGet]
-        [Route("getAll")]
-        public async Task<ActionResult<IEnumerable<LeadDto>>> Get()
-        {
-            var leads = await _leadAppService.GetAllAsync();
             return Ok(leads);
         }
     }

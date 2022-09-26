@@ -8,7 +8,6 @@ namespace Framework.LeadsManager.Application.Interfaces
     {
         Task<IEnumerable<LeadInvitationDto>> GetAllInvitedLeadsAsync();
         Task<IEnumerable<LeadAcceptedDto>> GetAllAcceptedLeadsAsync();
-        Task<IEnumerable<LeadDto>> GetAllAsync();
         Task AcceptLeadAsync(int id);
         Task DeclineLeadAsync(int id);
     }

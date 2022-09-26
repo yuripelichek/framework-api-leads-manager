@@ -17,7 +17,9 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
         public DbSet<Address> Address { get; set; }
         public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options){}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlServer(@"Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;");
+            => optionsBuilder
+            .UseLazyLoadingProxies()
+            .UseSqlServer(@"Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;");
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -54,25 +56,21 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
                 }
             }
         }
-
         public override int SaveChanges()
         {
             SetDefaultValues();
             return base.SaveChanges();
         }
-
         public async override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             SetDefaultValues();
             return await base.SaveChangesAsync(cancellationToken);
         }
-
         public async override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
             SetDefaultValues();
             return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
-
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
         {
             await base.SaveChangesAsync(cancellationToken);
