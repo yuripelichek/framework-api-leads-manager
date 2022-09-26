@@ -36,9 +36,7 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
                 modelBuilder
                     .Entity(type.ClrType)
                     .Property<DateTime?>("ModifiedAt");
-            }
-
-            modelBuilder.ApplyConfiguration(new AddressConfiguration());
+            }            
         }
         private void SetDefaultValues()
         {

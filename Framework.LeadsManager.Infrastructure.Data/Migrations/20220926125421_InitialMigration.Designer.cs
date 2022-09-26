@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220926005101_FixDiscount")]
-    partial class FixDiscount
+    [Migration("20220926125421_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,20 +23,22 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Address", b =>
                 {
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Complement")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
@@ -56,7 +58,10 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.Property<string>("ZipCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ClientId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId")
+                        .IsUnique();
 
                     b.ToTable("Address");
                 });
@@ -131,9 +136,6 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LeadId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
@@ -148,9 +150,6 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.HasIndex("CategoryId")
                         .IsUnique();
 
-                    b.HasIndex("LeadId")
-                        .IsUnique();
-
                     b.ToTable("Job");
                 });
 
@@ -161,7 +160,7 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Approved")
+                    b.Property<bool?>("Approved")
                         .HasColumnType("bit");
 
                     b.Property<int>("ClientId")
@@ -170,12 +169,18 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ClientId");
+
+                    b.HasIndex("JobId")
+                        .IsUnique();
 
                     b.ToTable("Lead");
                 });
@@ -199,15 +204,7 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Framework.LeadsManager.Domain.Entities.Lead", "Lead")
-                        .WithOne("Job")
-                        .HasForeignKey("Framework.LeadsManager.Domain.Entities.Job", "LeadId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Category");
-
-                    b.Navigation("Lead");
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Lead", b =>
@@ -218,7 +215,15 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Framework.LeadsManager.Domain.Entities.Job", "Job")
+                        .WithOne("Lead")
+                        .HasForeignKey("Framework.LeadsManager.Domain.Entities.Lead", "JobId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Client");
+
+                    b.Navigation("Job");
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Category", b =>
@@ -233,9 +238,9 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.Navigation("Lead");
                 });
 
-            modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Lead", b =>
+            modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Job", b =>
                 {
-                    b.Navigation("Job");
+                    b.Navigation("Lead");
                 });
 #pragma warning restore 612, 618
         }

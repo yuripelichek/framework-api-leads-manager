@@ -17,7 +17,7 @@ namespace Framework.LeadsManager.Api.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllInvitedLeads")]
+        [Route("getAllInvitedLeads")]
         public async Task<ActionResult<IEnumerable<LeadInvitationDto>>> GetAllInvitedLeads()
         {
             var leads = await _leadAppService.GetAllInvitedLeadsAsync();
@@ -25,10 +25,18 @@ namespace Framework.LeadsManager.Api.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllAcceptedLeads")]
+        [Route("getAllAcceptedLeads")]
         public async Task<ActionResult<IEnumerable<LeadAcceptedDto>>> GetAllAcceptedLeads()
         {
             var leads = await _leadAppService.GetAllAcceptedLeadsAsync();
+            return Ok(leads);
+        }
+
+        [HttpGet]
+        [Route("getAll")]
+        public async Task<ActionResult<IEnumerable<LeadDto>>> Get()
+        {
+            var leads = await _leadAppService.GetAllAsync();
             return Ok(leads);
         }
     }

@@ -41,5 +41,10 @@ namespace Framework.LeadsManager.Infrastructure.Data.Repositories
 
         public virtual async Task RemoveAsync(int id) =>
             Contexto.Remove(await GetById(id));
+
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            return await Contexto.Set<TEntity>().ToListAsync();
+        }
     }
 }

@@ -6,8 +6,8 @@ namespace Framework.LeadsManager.Domain.Services
 {
     public class LeadService : Service<Lead>, ILeadService
     {
-        private readonly ILeadRepository Repository;
+        private readonly ILeadRepository _repository;
 
-        public LeadService(ILeadRepository repository) : base(repository) => Repository = repository;
+        public LeadService(ILeadRepository repository) : base(repository) => _repository = repository;
     }
 }

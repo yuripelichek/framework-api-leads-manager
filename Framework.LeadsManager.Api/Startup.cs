@@ -1,6 +1,11 @@
 using Framework.LeadsManager.Application.Interfaces;
+using Framework.LeadsManager.Application.Mappers;
 using Framework.LeadsManager.Application.Services;
+using Framework.LeadsManager.Domain.Interfaces;
+using Framework.LeadsManager.Domain.Interfaces.Services;
+using Framework.LeadsManager.Domain.Services;
 using Framework.LeadsManager.Infrastructure.Data.Context;
+using Framework.LeadsManager.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +33,11 @@ namespace Framework.LeadsManager.Api
         {
             services.AddDbContext<RepositoryContext>(option => option.UseSqlServer("Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;"));
             services.AddScoped<ILeadAppService, LeadAppService>();
+            services.AddScoped<ILeadService, LeadService>();
+            services.AddScoped<ILeadService, LeadService>();
+            services.AddScoped<ILeadRepository, LeadRepository>();
+            services.AddAutoMapperSetup();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

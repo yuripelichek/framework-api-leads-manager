@@ -11,5 +11,6 @@ namespace Framework.LeadsManager.Domain.Interfaces
         Task<IEnumerable<TEntity>> CreateAsync(IEnumerable<TEntity> obj);
         Task<TEntity> UpdateAsync(TEntity obj);
         Task RemoveAsync(int id);
+        Task<IEnumerable<TEntity>> GetAllAsync();
     }
 }

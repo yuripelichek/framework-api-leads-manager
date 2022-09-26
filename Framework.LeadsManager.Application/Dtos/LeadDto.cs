@@ -4,6 +4,6 @@
     {
         public int ClientId { get; set; }
         public int JobId { get; set; }
-        public bool Approved { get; set; }
+        public bool? Approved { get; set; }
     }
 }
