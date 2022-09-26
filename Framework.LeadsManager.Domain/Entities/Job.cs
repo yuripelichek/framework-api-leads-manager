@@ -10,7 +10,7 @@ namespace Framework.LeadsManager.Domain.Entities
     {
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public decimal? PriceWithDescount{ get; set; }
+        public decimal? PriceWithDiscount{ get; set; }
         public int LeadId { get; set; }
         public int CategoryId { get; set; }
         public Lead Lead { get; set; }

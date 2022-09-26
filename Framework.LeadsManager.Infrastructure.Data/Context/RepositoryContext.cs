@@ -1,4 +1,5 @@
 ﻿using Framework.LeadsManager.Domain.Entities;
+using Framework.LeadsManager.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -7,17 +8,15 @@ using System.Threading.Tasks;
 
 namespace Framework.LeadsManager.Infrastructure.Data.Context
 {
-    public class RepositoryContext : DbContext
+    public class RepositoryContext : DbContext, IUnitOfWork
     {
         protected readonly string ConnectionString;
 
         public DbSet<Lead> Lead { get; set; }
-        public DbSet<Address> Address { get; set; }
-
-        public Task CommitAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public DbSet<Category> Category { get; set; }       
+        public DbSet<Client> Client { get; set; }       
+        public DbSet<Job> Job { get; set; }       
+        public DbSet<Address> Address { get; set; }       
 
         public RepositoryContext(DbContextOptions<RepositoryContext> options) :
     base(options)
