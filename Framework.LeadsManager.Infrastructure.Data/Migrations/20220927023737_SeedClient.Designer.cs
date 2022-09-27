@@ -4,14 +4,16 @@ using Framework.LeadsManager.Infrastructure.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20220927023737_SeedClient")]
+    partial class SeedClient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -86,40 +88,6 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = -1,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4429),
-                            Description = "CategoriaDescription01",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4454),
-                            Name = "Categoria01"
-                        },
-                        new
-                        {
-                            Id = -2,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4460),
-                            Description = "CategoriaDescription02",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4461),
-                            Name = "Categoria02"
-                        },
-                        new
-                        {
-                            Id = -3,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4463),
-                            Description = "CategoriaDescription03",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4464),
-                            Name = "Categoria03"
-                        },
-                        new
-                        {
-                            Id = -4,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4466),
-                            Description = "CategoriaDescription04",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4467),
-                            Name = "Categoria04"
-                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Client", b =>
@@ -155,50 +123,50 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         new
                         {
                             Id = -6,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 898, DateTimeKind.Local).AddTicks(8097),
+                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 7, DateTimeKind.Local).AddTicks(9555),
                             Email = "nome01@xyz.com",
                             LastName = "Sobrenome01",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 900, DateTimeKind.Local).AddTicks(8857),
+                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(7978),
                             Name = "Nome01",
                             Phone = "111.000.000"
                         },
                         new
                         {
                             Id = -2,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(47),
+                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8776),
                             Email = "nome022@xyz.com",
                             LastName = "Sobrenome022",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(53),
+                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8782),
                             Name = "Nome022",
                             Phone = "222222.000.000"
                         },
                         new
                         {
                             Id = -3,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(55),
+                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8784),
                             Email = "nome033@xyz.com",
                             LastName = "Sobrenome033",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(56),
+                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8786),
                             Name = "Nome033",
                             Phone = "333333.000.000"
                         },
                         new
                         {
                             Id = -4,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(58),
+                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8787),
                             Email = "nome044@xyz.com",
                             LastName = "Sobrenome044",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(59),
+                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8788),
                             Name = "Nome044",
                             Phone = "444444.000.000"
                         },
                         new
                         {
                             Id = -5,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(63),
+                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8790),
                             Email = "nome044@xyz.com",
                             LastName = "Sobrenome044",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(64),
+                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8791),
                             Name = "Nome055",
                             Phone = "444444.000.000"
                         });

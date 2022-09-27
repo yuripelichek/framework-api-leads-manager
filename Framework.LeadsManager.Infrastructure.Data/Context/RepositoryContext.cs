@@ -15,12 +15,12 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
         public DbSet<Client> Client { get; set; }
         public DbSet<Job> Job { get; set; }
         public DbSet<Address> Address { get; set; }
-        public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options){}
+        public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder
             .UseLazyLoadingProxies()
             .UseSqlServer(@"Server=localhost;Database=framework.leads.manager;Trusted_Connection=True;");
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var type in modelBuilder.Model.GetEntityTypes().Where(e => typeof(Entity).IsAssignableFrom(e.ClrType)))
@@ -38,7 +38,9 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
                 modelBuilder
                     .Entity(type.ClrType)
                     .Property<DateTime?>("ModifiedAt");
-            }            
+            }
+
+                modelBuilder.Seed();
         }
         private void SetDefaultValues()
         {
