@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220927023737_SeedClient")]
-    partial class SeedClient
+    [Migration("20220927033659_AddAddress")]
+    partial class AddAddress
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,6 +64,78 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Address");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            City = "City01",
+                            ClientId = -6,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4786),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4790),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -2,
+                            City = "City01",
+                            ClientId = -2,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4794),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4795),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -3,
+                            City = "City01",
+                            ClientId = -3,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4797),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4798),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -4,
+                            City = "City01",
+                            ClientId = -4,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4799),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4800),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -5,
+                            City = "City01",
+                            ClientId = -5,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4802),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(4803),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Category", b =>
@@ -88,6 +160,40 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2972),
+                            Description = "CategoriaDescription01",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2983),
+                            Name = "Categoria01"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2987),
+                            Description = "CategoriaDescription02",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2988),
+                            Name = "Categoria02"
+                        },
+                        new
+                        {
+                            Id = -3,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2989),
+                            Description = "CategoriaDescription03",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2990),
+                            Name = "Categoria03"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2992),
+                            Description = "CategoriaDescription04",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 556, DateTimeKind.Local).AddTicks(2993),
+                            Name = "Categoria04"
+                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Client", b =>
@@ -123,50 +229,50 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         new
                         {
                             Id = -6,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 7, DateTimeKind.Local).AddTicks(9555),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 553, DateTimeKind.Local).AddTicks(2338),
                             Email = "nome01@xyz.com",
                             LastName = "Sobrenome01",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(7978),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 554, DateTimeKind.Local).AddTicks(9281),
                             Name = "Nome01",
                             Phone = "111.000.000"
                         },
                         new
                         {
                             Id = -2,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8776),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(32),
                             Email = "nome022@xyz.com",
                             LastName = "Sobrenome022",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8782),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(38),
                             Name = "Nome022",
                             Phone = "222222.000.000"
                         },
                         new
                         {
                             Id = -3,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8784),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(40),
                             Email = "nome033@xyz.com",
                             LastName = "Sobrenome033",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8786),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(41),
                             Name = "Nome033",
                             Phone = "333333.000.000"
                         },
                         new
                         {
                             Id = -4,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8787),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(43),
                             Email = "nome044@xyz.com",
                             LastName = "Sobrenome044",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8788),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(44),
                             Name = "Nome044",
                             Phone = "444444.000.000"
                         },
                         new
                         {
                             Id = -5,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8790),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(45),
                             Email = "nome044@xyz.com",
                             LastName = "Sobrenome044",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 37, 37, 8, DateTimeKind.Local).AddTicks(8791),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 58, 555, DateTimeKind.Local).AddTicks(46),
                             Name = "Nome055",
                             Phone = "444444.000.000"
                         });

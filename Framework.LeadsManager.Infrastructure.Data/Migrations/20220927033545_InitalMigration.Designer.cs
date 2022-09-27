@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220926133015_LeadFunction")]
-    partial class LeadFunction
+    [Migration("20220927033545_InitalMigration")]
+    partial class InitalMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -118,6 +118,58 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Client");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -6,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 35, 45, 193, DateTimeKind.Local).AddTicks(1643),
+                            Email = "nome01@xyz.com",
+                            LastName = "Sobrenome01",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(803),
+                            Name = "Nome01",
+                            Phone = "111.000.000"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1587),
+                            Email = "nome022@xyz.com",
+                            LastName = "Sobrenome022",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1592),
+                            Name = "Nome022",
+                            Phone = "222222.000.000"
+                        },
+                        new
+                        {
+                            Id = -3,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1595),
+                            Email = "nome033@xyz.com",
+                            LastName = "Sobrenome033",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1596),
+                            Name = "Nome033",
+                            Phone = "333333.000.000"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1597),
+                            Email = "nome044@xyz.com",
+                            LastName = "Sobrenome044",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1598),
+                            Name = "Nome044",
+                            Phone = "444444.000.000"
+                        },
+                        new
+                        {
+                            Id = -5,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1600),
+                            Email = "nome044@xyz.com",
+                            LastName = "Sobrenome044",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1601),
+                            Name = "Nome055",
+                            Phone = "444444.000.000"
+                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Job", b =>

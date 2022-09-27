@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220927025750_SeedCategory")]
-    partial class SeedCategory
+    [Migration("20220927033928_AddJobSeed")]
+    partial class AddJobSeed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,6 +64,78 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Address");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            City = "City01",
+                            ClientId = -6,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8766),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8771),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -2,
+                            City = "City01",
+                            ClientId = -2,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8774),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8775),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -3,
+                            City = "City01",
+                            ClientId = -3,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8777),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8778),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -4,
+                            City = "City01",
+                            ClientId = -4,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8780),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8781),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        },
+                        new
+                        {
+                            Id = -5,
+                            City = "City01",
+                            ClientId = -5,
+                            Complement = "",
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8783),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(8785),
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = ""
+                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Category", b =>
@@ -93,33 +165,33 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         new
                         {
                             Id = -1,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4429),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6864),
                             Description = "CategoriaDescription01",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4454),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6872),
                             Name = "Categoria01"
                         },
                         new
                         {
                             Id = -2,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4460),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6876),
                             Description = "CategoriaDescription02",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4461),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6877),
                             Name = "Categoria02"
                         },
                         new
                         {
                             Id = -3,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4463),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6878),
                             Description = "CategoriaDescription03",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4464),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6880),
                             Name = "Categoria03"
                         },
                         new
                         {
                             Id = -4,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4466),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6882),
                             Description = "CategoriaDescription04",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 902, DateTimeKind.Local).AddTicks(4467),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 879, DateTimeKind.Local).AddTicks(6883),
                             Name = "Categoria04"
                         });
                 });
@@ -157,50 +229,50 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         new
                         {
                             Id = -6,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 898, DateTimeKind.Local).AddTicks(8097),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 877, DateTimeKind.Local).AddTicks(6355),
                             Email = "nome01@xyz.com",
                             LastName = "Sobrenome01",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 900, DateTimeKind.Local).AddTicks(8857),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(4589),
                             Name = "Nome01",
                             Phone = "111.000.000"
                         },
                         new
                         {
                             Id = -2,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(47),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5316),
                             Email = "nome022@xyz.com",
                             LastName = "Sobrenome022",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(53),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5321),
                             Name = "Nome022",
                             Phone = "222222.000.000"
                         },
                         new
                         {
                             Id = -3,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(55),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5323),
                             Email = "nome033@xyz.com",
                             LastName = "Sobrenome033",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(56),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5324),
                             Name = "Nome033",
                             Phone = "333333.000.000"
                         },
                         new
                         {
                             Id = -4,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(58),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5326),
                             Email = "nome044@xyz.com",
                             LastName = "Sobrenome044",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(59),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5327),
                             Name = "Nome044",
                             Phone = "444444.000.000"
                         },
                         new
                         {
                             Id = -5,
-                            CreatedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(63),
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5328),
                             Email = "nome044@xyz.com",
                             LastName = "Sobrenome044",
-                            ModifiedAt = new DateTime(2022, 9, 26, 23, 57, 49, 901, DateTimeKind.Local).AddTicks(64),
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 878, DateTimeKind.Local).AddTicks(5330),
                             Name = "Nome055",
                             Phone = "444444.000.000"
                         });
@@ -237,6 +309,58 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Job");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            CategoryId = -1,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(570),
+                            Description = "Job001",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(576),
+                            Price = 100m,
+                            PriceWithDiscount = 0m
+                        },
+                        new
+                        {
+                            Id = -2,
+                            CategoryId = -1,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(581),
+                            Description = "Job002",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(582),
+                            Price = 222m,
+                            PriceWithDiscount = 0m
+                        },
+                        new
+                        {
+                            Id = -3,
+                            CategoryId = -2,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(584),
+                            Description = "Job003",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(585),
+                            Price = 300m,
+                            PriceWithDiscount = 0m
+                        },
+                        new
+                        {
+                            Id = -4,
+                            CategoryId = -4,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(587),
+                            Description = "Job004",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(588),
+                            Price = 1000m,
+                            PriceWithDiscount = 0m
+                        },
+                        new
+                        {
+                            Id = -5,
+                            CategoryId = -3,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(590),
+                            Description = "Job005",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 39, 27, 880, DateTimeKind.Local).AddTicks(591),
+                            Price = 2000m,
+                            PriceWithDiscount = 0m
+                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Lead", b =>

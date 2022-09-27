@@ -103,7 +103,176 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
                         }
                     );
             #endregion
+
+            #region Include Address
+            modelBuilder.Entity<Address>().HasData(
+                        new Address
+                        {
+                            Id = -1,
+                            ClientId = -6,
+                            City = "City01",
+                            Complement = "",
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = "",
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Address
+                        {
+                            Id = -2,
+                            ClientId = -2,
+                            City = "City01",
+                            Complement = "",
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = "",
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Address
+                        {
+                            Id = -3,
+                            ClientId = -3,
+                            City = "City01",
+                            Complement = "",
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = "",
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Address
+                        {
+                            Id = -4,
+                            ClientId = -4,
+                            City = "City01",
+                            Complement = "",
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = "",
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Address
+                        {
+                            Id = -5,
+                            ClientId = -5,
+                            City = "City01",
+                            Complement = "",
+                            Neighborhood = "Bairro01",
+                            Number = "001",
+                            State = "",
+                            Street = "",
+                            ZipCode = "",
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        }
+                    );
+            #endregion
+
+            #region Include Job
+            modelBuilder.Entity<Job>().HasData(
+                        new Job
+                        {
+                            Id = -1,
+                            CategoryId = -1,
+                            Description = "Job001",
+                            Price = 100,
+                            PriceWithDiscount = 0,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Job
+                        {
+                            Id = -2,
+                            CategoryId = -1,
+                            Description = "Job002",
+                            Price = 222,
+                            PriceWithDiscount = 0,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Job
+                        {
+                            Id = -3,
+                            CategoryId = -2,
+                            Description = "Job003",
+                            Price = 300,
+                            PriceWithDiscount = 0,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Job
+                        {
+                            Id = -4,
+                            CategoryId = -4,
+                            Description = "Job004",
+                            Price = 1000,
+                            PriceWithDiscount = 0,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Job
+                        {
+                            Id = -5,
+                            CategoryId = -3,
+                            Description = "Job005",
+                            Price = 2000,
+                            PriceWithDiscount = 0,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        });
+            #endregion
+
+            #region Include Lead
+            modelBuilder.Entity<Lead>().HasData(
+                        new Lead
+                        {
+                            Id = -2,
+                            JobId = -2,
+                            ClientId = -2,
+                            Approved = null,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Lead
+                        {
+                            Id = -3,
+                            JobId = -3,
+                            ClientId = -3,
+                            Approved = null,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Lead
+                        {
+                            Id = -4,
+                            JobId = -4,
+                            ClientId = -4,
+                            Approved = null,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        },
+                        new Lead
+                        {
+                            Id = -5,
+                            JobId = -5,
+                            ClientId = -5,
+                            Approved = null,
+                            CreatedAt = DateTime.Now,
+                            ModifiedAt = DateTime.Now
+                        }
+                        );
+            #endregion
         }
     }
 }
-

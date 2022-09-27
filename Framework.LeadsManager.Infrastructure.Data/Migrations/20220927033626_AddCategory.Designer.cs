@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20220926125421_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220927033626_AddCategory")]
+    partial class AddCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -88,6 +88,40 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -1,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8485),
+                            Description = "CategoriaDescription01",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8496),
+                            Name = "Categoria01"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8499),
+                            Description = "CategoriaDescription02",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8501),
+                            Name = "Categoria02"
+                        },
+                        new
+                        {
+                            Id = -3,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8502),
+                            Description = "CategoriaDescription03",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8504),
+                            Name = "Categoria03"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8505),
+                            Description = "CategoriaDescription04",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 954, DateTimeKind.Local).AddTicks(8506),
+                            Name = "Categoria04"
+                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Client", b =>
@@ -118,6 +152,58 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Client");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = -6,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 952, DateTimeKind.Local).AddTicks(8334),
+                            Email = "nome01@xyz.com",
+                            LastName = "Sobrenome01",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6138),
+                            Name = "Nome01",
+                            Phone = "111.000.000"
+                        },
+                        new
+                        {
+                            Id = -2,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6842),
+                            Email = "nome022@xyz.com",
+                            LastName = "Sobrenome022",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6848),
+                            Name = "Nome022",
+                            Phone = "222222.000.000"
+                        },
+                        new
+                        {
+                            Id = -3,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6851),
+                            Email = "nome033@xyz.com",
+                            LastName = "Sobrenome033",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6852),
+                            Name = "Nome033",
+                            Phone = "333333.000.000"
+                        },
+                        new
+                        {
+                            Id = -4,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6854),
+                            Email = "nome044@xyz.com",
+                            LastName = "Sobrenome044",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6855),
+                            Name = "Nome044",
+                            Phone = "444444.000.000"
+                        },
+                        new
+                        {
+                            Id = -5,
+                            CreatedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6857),
+                            Email = "nome044@xyz.com",
+                            LastName = "Sobrenome044",
+                            ModifiedAt = new DateTime(2022, 9, 27, 0, 36, 25, 953, DateTimeKind.Local).AddTicks(6858),
+                            Name = "Nome055",
+                            Phone = "444444.000.000"
+                        });
                 });
 
             modelBuilder.Entity("Framework.LeadsManager.Domain.Entities.Job", b =>

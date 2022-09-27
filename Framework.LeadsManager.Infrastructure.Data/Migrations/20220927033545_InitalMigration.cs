@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Framework.LeadsManager.Infrastructure.Data.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitalMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -120,6 +120,18 @@ namespace Framework.LeadsManager.Infrastructure.Data.Migrations
                         principalTable: "Job",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Client",
+                columns: new[] { "Id", "CreatedAt", "Email", "LastName", "ModifiedAt", "Name", "Phone" },
+                values: new object[,]
+                {
+                    { -6, new DateTime(2022, 9, 27, 0, 35, 45, 193, DateTimeKind.Local).AddTicks(1643), "nome01@xyz.com", "Sobrenome01", new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(803), "Nome01", "111.000.000" },
+                    { -2, new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1587), "nome022@xyz.com", "Sobrenome022", new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1592), "Nome022", "222222.000.000" },
+                    { -3, new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1595), "nome033@xyz.com", "Sobrenome033", new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1596), "Nome033", "333333.000.000" },
+                    { -4, new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1597), "nome044@xyz.com", "Sobrenome044", new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1598), "Nome044", "444444.000.000" },
+                    { -5, new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1600), "nome044@xyz.com", "Sobrenome044", new DateTime(2022, 9, 27, 0, 35, 45, 194, DateTimeKind.Local).AddTicks(1601), "Nome055", "444444.000.000" }
                 });
 
             migrationBuilder.CreateIndex(
