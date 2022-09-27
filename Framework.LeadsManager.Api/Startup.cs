@@ -42,7 +42,7 @@ namespace Framework.LeadsManager.Api
             services.AddScoped<IJobService, JobService>();
             services.AddScoped<IJobRepository, JobRepository>();
 
-            services.AddScoped<IClientAppService, ClientAppService>();
+            //services.AddScoped<IClientAppService, ClientAppService>();
             services.AddScoped<IClientService, ClientService>();
             services.AddScoped<IClientRepository, ClientRepository>();
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Framework.LeadsManager.Infrastructure.Data.Context
 {
-    public class RepositoryContext : DbContext, IUnitOfWork
+    public class RepositoryContext : DbContext
     {
         public DbSet<Lead> Lead { get; set; }
         public DbSet<Category> Category { get; set; }
@@ -56,25 +56,10 @@ namespace Framework.LeadsManager.Infrastructure.Data.Context
                 }
             }
         }
-        public override int SaveChanges()
-        {
-            SetDefaultValues();
-            return base.SaveChanges();
-        }
         public async override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             SetDefaultValues();
             return await base.SaveChangesAsync(cancellationToken);
-        }
-        public async override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
-        {
-            SetDefaultValues();
-            return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
-        }
-        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
-        {
-            await base.SaveChangesAsync(cancellationToken);
-            return true;
         }
     }
 }

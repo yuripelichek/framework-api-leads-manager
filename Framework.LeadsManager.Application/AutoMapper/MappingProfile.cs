@@ -11,6 +11,7 @@ namespace AutoMapper
             CreateMap<LeadDto, Lead>().ReverseMap();
             CreateMap<Lead, LeadInvitationDto>()
                 .ForMember(dto => dto.ClientFirstName, opt => opt.MapFrom(src => src.Client.Name))
+                .ForMember(dto => dto.LeadId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dto => dto.JobId, opt => opt.MapFrom(src => src.JobId))
                 .ForMember(dto => dto.Suburb, opt => opt.MapFrom(src => src.Client.Addreess.GetSuburb()))
                 .ForMember(dto => dto.JobDescription, opt => opt.MapFrom(src => src.Job.Description))

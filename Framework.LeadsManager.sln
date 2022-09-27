@@ -9,21 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1FB1FCA-921
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{04F0D599-A5E0-486B-8A96-925E6A01A06F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.LeadsManager.Api.Tests", "Framework.LeadsManager.Api.Tests\Framework.LeadsManager.Api.Tests.csproj", "{29F59BB1-11E0-4830-8073-BC6C8957E83C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.LeadsManager.Infrastructure.Data", "Framework.LeadsManager.Infrastructure.Data\Framework.LeadsManager.Infrastructure.Data.csproj", "{1EB1C83A-27C2-4FCF-9CEA-E2519EFE21F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.LeadsManager.Infrastructure.Data", "Framework.LeadsManager.Infrastructure.Data\Framework.LeadsManager.Infrastructure.Data.csproj", "{1EB1C83A-27C2-4FCF-9CEA-E2519EFE21F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.LeadsManager.Infrastructure.Components", "Framework.LeadsManager.Infrastructure.Components\Framework.LeadsManager.Infrastructure.Components.csproj", "{8E074ED6-6D35-422D-B887-47C00557AC64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.LeadsManager.Infrastructure.Components", "Framework.LeadsManager.Infrastructure.Components\Framework.LeadsManager.Infrastructure.Components.csproj", "{8E074ED6-6D35-422D-B887-47C00557AC64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.LeadsManager.Domain", "Framework.LeadsManager.Domain\Framework.LeadsManager.Domain.csproj", "{DBE76454-CD3F-4A3A-9999-DB74E383365F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.LeadsManager.Infrastructure.Components.Tests", "Framework.LeadsManager.Infrastructure.Components.Tests\Framework.LeadsManager.Infrastructure.Components.Tests.csproj", "{027148C7-1C7E-43E1-A781-BD46A2B9721A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.LeadsManager.Application", "Framework.LeadsManager.Application\Framework.LeadsManager.Application.csproj", "{A8E65D6E-CE17-41FD-9497-4031F0B152FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.LeadsManager.Infrastructure.Data.Tests", "Framework.LeadsManager.Infrastructure.Data.Tests\Framework.LeadsManager.Infrastructure.Data.Tests.csproj", "{6034C653-930F-4831-9054-3726E7C34831}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.LeadsManager.Domain", "Framework.LeadsManager.Domain\Framework.LeadsManager.Domain.csproj", "{DBE76454-CD3F-4A3A-9999-DB74E383365F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.LeadsManager.Application", "Framework.LeadsManager.Application\Framework.LeadsManager.Application.csproj", "{A8E65D6E-CE17-41FD-9497-4031F0B152FD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.LeadsManager.Application.Tests", "Framework.LeadsManager.Application.Tests\Framework.LeadsManager.Application.Tests.csproj", "{7CB9C50F-853C-426A-A7E0-688A0D537BF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.LeadsManager.Application.Tests", "Framework.LeadsManager.Application.Tests\Framework.LeadsManager.Application.Tests.csproj", "{7CB9C50F-853C-426A-A7E0-688A0D537BF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +29,6 @@ Global
 		{C2F958EA-EA2C-4823-864E-1E9241D752FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2F958EA-EA2C-4823-864E-1E9241D752FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2F958EA-EA2C-4823-864E-1E9241D752FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29F59BB1-11E0-4830-8073-BC6C8957E83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29F59BB1-11E0-4830-8073-BC6C8957E83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29F59BB1-11E0-4830-8073-BC6C8957E83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29F59BB1-11E0-4830-8073-BC6C8957E83C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EB1C83A-27C2-4FCF-9CEA-E2519EFE21F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EB1C83A-27C2-4FCF-9CEA-E2519EFE21F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB1C83A-27C2-4FCF-9CEA-E2519EFE21F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,14 +37,6 @@ Global
 		{8E074ED6-6D35-422D-B887-47C00557AC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E074ED6-6D35-422D-B887-47C00557AC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E074ED6-6D35-422D-B887-47C00557AC64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{027148C7-1C7E-43E1-A781-BD46A2B9721A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{027148C7-1C7E-43E1-A781-BD46A2B9721A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{027148C7-1C7E-43E1-A781-BD46A2B9721A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{027148C7-1C7E-43E1-A781-BD46A2B9721A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6034C653-930F-4831-9054-3726E7C34831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6034C653-930F-4831-9054-3726E7C34831}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6034C653-930F-4831-9054-3726E7C34831}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6034C653-930F-4831-9054-3726E7C34831}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DBE76454-CD3F-4A3A-9999-DB74E383365F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DBE76454-CD3F-4A3A-9999-DB74E383365F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBE76454-CD3F-4A3A-9999-DB74E383365F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -73,11 +55,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C2F958EA-EA2C-4823-864E-1E9241D752FD} = {B1FB1FCA-9210-431A-8ACA-CC304E441E1D}
-		{29F59BB1-11E0-4830-8073-BC6C8957E83C} = {04F0D599-A5E0-486B-8A96-925E6A01A06F}
 		{1EB1C83A-27C2-4FCF-9CEA-E2519EFE21F0} = {B1FB1FCA-9210-431A-8ACA-CC304E441E1D}
 		{8E074ED6-6D35-422D-B887-47C00557AC64} = {B1FB1FCA-9210-431A-8ACA-CC304E441E1D}
-		{027148C7-1C7E-43E1-A781-BD46A2B9721A} = {04F0D599-A5E0-486B-8A96-925E6A01A06F}
-		{6034C653-930F-4831-9054-3726E7C34831} = {04F0D599-A5E0-486B-8A96-925E6A01A06F}
 		{DBE76454-CD3F-4A3A-9999-DB74E383365F} = {B1FB1FCA-9210-431A-8ACA-CC304E441E1D}
 		{A8E65D6E-CE17-41FD-9497-4031F0B152FD} = {B1FB1FCA-9210-431A-8ACA-CC304E441E1D}
 		{7CB9C50F-853C-426A-A7E0-688A0D537BF4} = {04F0D599-A5E0-486B-8A96-925E6A01A06F}

@@ -2,6 +2,7 @@
 using Framework.LeadsManager.Application.Dtos;
 using Framework.LeadsManager.Application.Interfaces;
 using Framework.LeadsManager.Domain.Interfaces.Services;
+using Framework.LeadsManager.Infrastructure.Components.Mail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +13,32 @@ namespace Framework.LeadsManager.Application.Services
     public class LeadAppService : ILeadAppService
     {
         private readonly ILeadService _leadService;
-        private readonly IJobService _jobService;
-        private readonly IClientService _clientService;
         private readonly IMapper _mapper;
         public LeadAppService(ILeadService leadService,
-            IClientService clientService,
-                              IMapper mapper) { 
+                              IMapper mapper)
+        {
             _leadService = leadService;
             _mapper = mapper;
-            _clientService = clientService;
         }
         public async Task AcceptLeadAsync(int id)
         {
-            await _leadService.RemoveAsync(id);
+            var lead = await _leadService.GetById(id);
+
+            if (lead == null)
+                throw new Exception("Não foi possível encontrar o Lead");
+
+            await _leadService.AcceptLeadAsync(lead);
+
+            MailSender.SendMail("Lead aceito.");
         }
-        public Task DeclineLeadAsync(int id)
+        public async Task DeclineLeadAsync(int id)
         {
-            throw new NotImplementedException();
+            var lead = await _leadService.GetById(id);
+
+            if (lead == null)
+                throw new Exception("Não foi possível encontrar o Lead");
+
+            await _leadService.DeclineLeadAsync(lead);
         }
         public async Task<IEnumerable<LeadAcceptedDto>> GetAllAcceptedLeadsAsync()
         {
@@ -38,7 +48,6 @@ namespace Framework.LeadsManager.Application.Services
 
             return retorno;
         }
-
         public async Task<IEnumerable<LeadInvitationDto>> GetAllInvitedLeadsAsync()
         {
             var retornoLead = await _leadService.GetAllAsync();

@@ -4,6 +4,7 @@ namespace Framework.LeadsManager.Application.Dtos
 {
     public class LeadInvitationDto
     {
+        public int LeadId { get; set; }
         public int JobId { get; set; }
         public string ClientFirstName { get; set; }
         public string Suburb { get; set; }
